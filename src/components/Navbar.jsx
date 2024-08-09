@@ -35,9 +35,15 @@ function Navbar() {
         <h1 className="text-3xl">Intextify</h1>
       </div>
       <div className="hidden xl:flex w-[40%] space-x-24 text-[18px]">
-        <Link href="/">Home</Link>
-        <Link href="/">About</Link>
-        <Link href="/">Features</Link>
+        <Link className="hover:text-teal-600" href="/">
+          Home
+        </Link>
+        <Link className="hover:text-teal-600" href="/">
+          About
+        </Link>
+        <Link className="hover:text-teal-600" href="/">
+          Features
+        </Link>
       </div>
       <div className="hidden lg:flex w-[20%] space-x-16 text-[18px]">
         <Link

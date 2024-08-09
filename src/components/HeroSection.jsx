@@ -1,32 +1,34 @@
-import Image from "next/image";
+import React from "react";
 
-// bg-gradient-to-r from-sky-950 to-cyan-700 in the section tag
-
-function Hero() {
+const HeroSection = () => {
   return (
-    <section className="flex justify-between items-center px-32 text-slate-800 py-16">
-      <div className="container mx-auto">
-        <h1 className="text-4xl font-bold mb-4">Document Analysis Made Easy</h1>
-        <p className="text-lg mb-8">
-          Summarize, analyze, and visualize your documents effortlessly.
-          Summarize, analyze, and visualize your documents effortlessly.
-          Summarize, analyze, and visualize your documents effortlessly.
+    <div className="flex justify-between py-20 px-5 space-x-20 md:px-32">
+      <div className="flex flex-col gap-4 w-[75%]">
+        <h1 className="text-gray-700 text-5xl leading-tight tracking-wider font-semibold">
+          <span className="text-teal-600">Transform</span> Your{" "}
+          <span className="text-teal-600">Documents</span> with Cutting-Edge{" "}
+          <span className="text-yellow-500">Analysis</span> and Insights
+        </h1>
+        <p className="text-lg text-gray-700">
+          Whether you're summarizing lengthy reports, analyzing data patterns,
+          or visualizing key metrics, our tool simplifies every step of the
+          process. Dive into advanced topic modeling to uncover hidden insights
+          and trends within your documents. Experience unparalleled efficiency
+          and clarity with our state-of-the-art technology designed for
+          professionals and enthusiasts alike. Discover the power of effortless
+          document analysis and make informed decisions with ease.
         </p>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Try It Now
-        </button>
+        <div>
+          <button className="mt-4 bg-teal-600 text-white px-7 py-3 text-lg rounded-lg hover:bg-teal-700">
+            Try It Now
+          </button>
+        </div>
       </div>
       <div>
-        <Image
-          src="/bgImg.jpeg"
-          alt="Hero Image"
-          width={800}
-          height={400}
-          className="rounded-lg"
-        />
+        <img className="w-[100%] h-[70%] rounded-md" src="./bgImg.jpeg" />
       </div>
-    </section>
+    </div>
   );
-}
+};
 
-export default Hero;
+export default HeroSection;
