@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Rocket } from "lucide-react";
+import { Menu, X, Rocket, ChartNoAxesCombined } from "lucide-react";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,8 +31,11 @@ function Navbar() {
 
   return (
     <nav className="relative py-5 px-5 md:px-32 text-gray-800 flex justify-between items-center">
-      <div className="w-[30%]">
-        <h1 className="text-3xl">Intextify</h1>
+      <div className="w-[30%] flex gap-1">
+        <h1 className="text-3xl tracking-wider">Intextify</h1>
+        <span>
+          <ChartNoAxesCombined size={32} color="#0d9488" />
+        </span>
       </div>
       <div className="hidden xl:flex w-[40%] space-x-24 text-[18px]">
         <Link className="hover:text-teal-600" href="/">
@@ -96,14 +99,18 @@ function Navbar() {
               </Link>
               <Link
                 href="/"
-                className="border-2 border-teal-500 text-center w-[80%] mx-auto py-2 px-6 rounded-2xl text-white hover:bg-teal-500 hover:text-white"
+                className="border-2 border-teal-500 text-xl w-[80%] mx-auto py-2 px-6 rounded-2xl text-white hover:bg-teal-500 hover:text-white"
                 onClick={closeMenu}
               >
                 Login
               </Link>
               <div className="flex gap-2 items-center justify-center mx-auto w-[80%] border-2 py-2 px-6 border-teal-500 rounded-2xl text-teal-500 hover:bg-teal-500 hover:text-white">
                 <Rocket size={20} color="#933a34" />
-                <Link href="/" className="text-white" onClick={closeMenu}>
+                <Link
+                  href="/"
+                  className="text-white text-xl"
+                  onClick={closeMenu}
+                >
                   Signup
                 </Link>
               </div>
