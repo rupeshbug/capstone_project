@@ -4,7 +4,7 @@ import "./globals.css";
 const inter = Nunito({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "DocAnalyzer",
+  title: "Intextify",
   description: "Unravel the insights from documents",
 };
 

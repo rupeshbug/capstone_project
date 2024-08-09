@@ -2,9 +2,9 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <div className="flex justify-between py-20 px-5 space-x-20 md:px-32">
-      <div className="flex flex-col gap-4 w-[75%]">
-        <h1 className="text-gray-700 text-5xl leading-tight tracking-wider font-semibold">
+    <div className="flex justify-between flex-col lg:flex-row py-12 md:py-20 px-5 space-x-20 md:px-32">
+      <div className="flex flex-col gap-4 w-[100%] lg:w-[75%]">
+        <h1 className="text-gray-700 text-3xl md:text-5xl md:leading-tight tracking-wider font-semibold">
           <span className="text-teal-600">Transform</span> Your{" "}
           <span className="text-teal-600">Documents</span> with Cutting-Edge{" "}
           <span className="text-yellow-500">Analysis</span> and Insights
@@ -18,14 +18,18 @@ const HeroSection = () => {
           professionals and enthusiasts alike. Discover the power of effortless
           document analysis and make informed decisions with ease.
         </p>
-        <div>
+        <div className="mx-auto mb-7 lg:mx-0 lg:mb-0">
           <button className="mt-4 bg-teal-600 text-white px-7 py-3 text-lg rounded-lg hover:bg-teal-700">
             Try It Now
           </button>
         </div>
       </div>
-      <div>
-        <img className="w-[100%] h-[70%] rounded-md" src="./bgImg.jpeg" />
+      <div className="">
+        <img
+          className="w-[100%] h-[85%] rounded-md object-cover"
+          src="./heroBackground.png"
+          alt="Hero Image"
+        />
       </div>
     </div>
   );
