@@ -9,7 +9,7 @@ const FeatureCard = ({ icon: Icon, title, description }) => {
       </span>
       <h3 className="text-xl text-gray-800 font-semibold mb-2">{title}</h3>
       <p className="text-gray-700">{description}</p>
-      <div className="mt-6 flex items-center gap-1 font-semibold opacity-80">
+      <div className="mt-6 flex items-center gap-2 font-semibold opacity-80">
         <p className="text-red-500">Learn More</p>
         <MoveRight size={20} className="text-red-500" />
       </div>
