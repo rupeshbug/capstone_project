@@ -4,7 +4,7 @@ import { Rocket, ChartBar, Layers } from "lucide-react";
 
 const HomePage = () => {
   return (
-    <div className="py-16 px-5 md:px-32">
+    <div className="py-12 md:py-16 px-5 md:px-32">
       <h2 className="text-4xl tracking-wider mx-auto text-gray-800 font-semibold text-center mb-8">
         Our <span className="text-yellow-500">Features</span>
       </h2>
