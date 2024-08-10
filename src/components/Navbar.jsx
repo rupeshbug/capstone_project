@@ -41,10 +41,10 @@ function Navbar() {
         <Link className="hover:text-teal-600" href="/">
           Home
         </Link>
-        <Link className="hover:text-teal-600" href="/">
+        <Link className="hover:text-teal-600" href="/about">
           About
         </Link>
-        <Link className="hover:text-teal-600" href="/">
+        <Link className="hover:text-teal-600" href="/features">
           Features
         </Link>
       </div>

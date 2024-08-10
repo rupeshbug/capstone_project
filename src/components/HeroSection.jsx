@@ -3,7 +3,7 @@ import React from "react";
 const HeroSection = () => {
   return (
     <div className="flex justify-between flex-col lg:flex-row py-12 md:py-20 px-5 lg:space-x-20 md:px-32">
-      <div className="flex flex-col gap-4 w-[100%] lg:w-[60%]">
+      <div className="flex flex-col gap-4 w-[100%] lg:w-[60%] lg:mt-7">
         <h1 className="text-gray-700 text-3xl md:text-5xl md:leading-tight tracking-wider font-semibold">
           <span className="text-teal-600">Transform</span> Your{" "}
           <span className="text-teal-600">Documents</span> with Cutting-Edge{" "}
