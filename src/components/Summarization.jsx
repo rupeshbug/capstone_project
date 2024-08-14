@@ -50,10 +50,11 @@ export default function Summarization() {
             quick insights and overviews of lengthy content.
           </p>
           <textarea
-            className="w-full h-64 p-4 border-2 border-gray-300 rounded-md resize-none"
+            className="w-full h-64 p-4 border-2 border-gray-100 rounded-md resize-none outline-none shadow-md"
             value={text}
             onChange={(e) => setText(e.target.value)}
             placeholder="Enter text to summarize..."
+            spellCheck="false"
           />
           <button
             className="bg-teal-500 text-white text-lg px-5 py-3 mt-7 hover:bg-teal-600 rounded"
