@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Navbar from "./Navbar";
+import { ClipLoader } from "react-spinners";
 
 export default function Summarization() {
   const [text, setText] = useState("");
@@ -59,7 +60,7 @@ export default function Summarization() {
             onClick={handleGenerate}
             disabled={loading}
           >
-            {loading ? "Generating..." : "Generate Summary"}
+            {loading ? <ClipLoader color="white" size={24} /> : "Summarize"}
           </button>
 
           {error && <p className="text-red-500 mt-4">{error}</p>}
