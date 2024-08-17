@@ -4,13 +4,16 @@ import { useState } from "react";
 import Navbar from "./Navbar";
 
 async function fetchTopics(text) {
-  const response = await fetch("http://127.0.0.1:5000/analyze-text", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ text }),
-  });
+  const response = await fetch(
+    "https://capstone-api-llu2.onrender.com/analyze-text",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ text }),
+    }
+  );
 
   if (!response.ok) {
     throw new Error("Network response was not ok");
