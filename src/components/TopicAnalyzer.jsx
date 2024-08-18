@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Navbar from "./Navbar";
+import { ClipLoader } from "react-spinners";
 
 async function fetchTopics(text) {
   const response = await fetch(
@@ -27,15 +28,20 @@ export default function TopicAnalyzer() {
   const [text, setText] = useState("");
   const [topics, setTopics] = useState([]);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleAnalyze = async () => {
     setError("");
+    setLoading(true);
+    setTopics([]);
     try {
       const result = await fetchTopics(text);
       setTopics(result);
     } catch (error) {
       setError("An error occurred while analyzing the text.");
       console.error("Error fetching topics:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -43,9 +49,13 @@ export default function TopicAnalyzer() {
     <>
       <Navbar />
       <div className="max-w-4xl bg-slate-100 mx-auto px-5 py-8 md:p-12 rounded-lg shadow-md mt-10">
-        <h1 className="text-3xl mb-7 font-bold text-center text-yellow-500">
+        <h1 className="text-3xl mb-4 font-bold text-center text-yellow-500">
           Topic Analyzer
         </h1>
+        <p className="text-center mb-7 text-lg text-gray-700">
+          Uncover the hidden topics within your text. Simply enter your content
+          and let our analyzer do the rest.
+        </p>
         <textarea
           value={text}
           onChange={(e) => setText(e.target.value)}
@@ -58,8 +68,9 @@ export default function TopicAnalyzer() {
           <button
             onClick={handleAnalyze}
             className="py-2 px-4 bg-teal-500 text-white rounded text-lg hover:bg-teal-600"
+            disabled={loading}
           >
-            Analyze
+            {loading ? <ClipLoader color="white" size={24} /> : "Analyze"}
           </button>
         </div>
         {error && <p className="mt-4 text-red-500 text-center">{error}</p>}
