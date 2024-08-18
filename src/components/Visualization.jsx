@@ -8,7 +8,7 @@ export default function Visualization() {
   const [file, setFile] = useState(null);
   const [error, setError] = useState("");
   const [reportHtml, setReportHtml] = useState("");
-  const [loading, setLoading] = useState(false); // Add loading state
+  const [loading, setLoading] = useState(false);
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
@@ -17,11 +17,11 @@ export default function Visualization() {
   const handleUpload = async () => {
     setError("");
     setReportHtml("");
-    setLoading(true); // Set loading to true when starting the upload
+    setLoading(true);
 
     if (!file) {
       setError("Please upload a CSV file.");
-      setLoading(false); // Stop loading if no file is selected
+      setLoading(false);
       return;
     }
 
@@ -29,10 +29,13 @@ export default function Visualization() {
     formData.append("file", file);
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/generate-report", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://automated-visualization-api.onrender.com/generate-report",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -44,7 +47,7 @@ export default function Visualization() {
       setError("An error occurred while generating the report.");
       console.error("Error fetching report:", error);
     } finally {
-      setLoading(false); // Stop loading when the process is done
+      setLoading(false);
     }
   };
 
@@ -71,7 +74,7 @@ export default function Visualization() {
           <button
             onClick={handleUpload}
             className="mt-7 py-2 px-4 bg-teal-500 text-white rounded text-lg hover:bg-teal-600"
-            disabled={loading} // Disable the button while loading
+            disabled={loading}
           >
             {loading ? (
               <ClipLoader color="white" size={24} />
