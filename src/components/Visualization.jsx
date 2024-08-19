@@ -61,8 +61,8 @@ export default function Visualization() {
         <p className="text-center mb-7 text-lg text-gray-700">
           Upload your CSV file to automatically generate an insightful
           exploratory data analysis report. The report will visualize the key
-          aspects of your data, allowing you to easily identify trends,
-          patterns, and anomalies.
+          aspects of your data, allowing you to easily identify trends and
+          patterns.
         </p>
         <div className="flex flex-col items-center mt-7">
           <input
