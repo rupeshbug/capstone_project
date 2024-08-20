@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -9,7 +10,7 @@ const HeroSection = () => {
           <span className="text-teal-600">Documents</span> with Cutting-Edge{" "}
           <span className="text-yellow-500">Analysis</span> and Insights
         </h1>
-        <p className="text-lg text-gray-700">
+        <p className="text-lg text-gray-700 py-2">
           Whether you're summarizing lengthy reports, analyzing data patterns,
           or visualizing key metrics, our tool simplifies every step of the
           process. Dive into advanced topic modeling to uncover hidden insights
@@ -18,10 +19,13 @@ const HeroSection = () => {
           professionals and enthusiasts alike. Discover the power of effortless
           document analysis and make informed decisions with ease.
         </p>
-        <div className="mx-auto mb-7 lg:mx-0 lg:mb-0">
-          <button className="mt-4 bg-teal-600 text-white px-7 py-3 text-lg rounded-lg hover:bg-teal-700">
+        <div className="mt-6 mx-auto mb-8 lg:mx-0 lg:mb-0">
+          <Link
+            href="/features"
+            className="bg-teal-600 text-white px-7 py-3 text-lg rounded-lg hover:bg-teal-700"
+          >
             Try It Now
-          </button>
+          </Link>
         </div>
       </div>
       <div className="w-[100%] lg:w-[40%] text-center">
