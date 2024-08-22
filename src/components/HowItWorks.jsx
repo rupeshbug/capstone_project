@@ -18,7 +18,7 @@ const HowItWorksSection = () => {
       title: "Go to Features Page",
       description:
         "Navigate to the features page where you can explore all the tools available.",
-      imageSrc: "summarizeNoBG.png",
+      imageSrc: "summarizeNoBg.png",
       altText: "Features page overview",
     },
     {
