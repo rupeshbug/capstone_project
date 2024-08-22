@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import { ClipLoader } from "react-spinners";
 
@@ -9,6 +9,21 @@ export default function Visualization() {
   const [error, setError] = useState("");
   const [reportHtml, setReportHtml] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const [currentWord, setCurrentWord] = useState("EDA");
+
+  useEffect(() => {
+    const words = ["EDA", "Visualization"];
+    let index = 0;
+
+    const intervalId = setInterval(() => {
+      index = (index + 1) % words.length;
+      setCurrentWord(words[index]);
+    }, 2000);
+
+    // Clear the interval when the component unmounts
+    return () => clearInterval(intervalId);
+  }, []);
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
@@ -55,8 +70,8 @@ export default function Visualization() {
     <>
       <Navbar />
       <div className="container mx-auto px-5 py-8 md:p-12 mt-7 max-w-4xl">
-        <h1 className="text-4xl mb-8 font-bold text-center text-yellow-500">
-          Automated EDA and Visualization
+        <h1 className="text-4xl mb-8 font-bold text-center text-gray-600">
+          Automated <span className="text-yellow-500">{currentWord}</span>
         </h1>
         <p className="text-center mb-7 text-lg text-gray-700">
           Upload your CSV file to automatically generate an insightful

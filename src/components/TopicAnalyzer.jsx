@@ -49,8 +49,8 @@ export default function TopicAnalyzer() {
     <>
       <Navbar />
       <div className="max-w-4xl bg-slate-100 mx-auto px-5 py-8 md:p-12 rounded-lg shadow-md mt-10">
-        <h1 className="text-3xl mb-4 font-bold text-center text-yellow-500">
-          Topic Analyzer
+        <h1 className="text-3xl mb-4 font-bold text-center text-gray-700">
+          <span className="text-yellow-500">Topic </span>Analyzer
         </h1>
         <p className="text-center mb-7 text-lg text-gray-700">
           Uncover the hidden topics within your text. Simply enter your content

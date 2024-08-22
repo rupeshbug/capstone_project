@@ -5,11 +5,8 @@ export default function Home() {
   return (
     <div className="">
       <Head>
-        <title>Summarization Feature</title>
-        <meta
-          name="description"
-          content="Summarization feature using Google GenerativeAI"
-        />
+        <title>Topic Analyzer</title>
+        <meta name="description" content="Topic analysis using LDA algorithm" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="p-4">

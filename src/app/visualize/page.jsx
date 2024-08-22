@@ -8,7 +8,7 @@ export default function Home() {
         <title>Automated Visualization</title>
         <meta
           name="description"
-          content="Summarization feature using Google GenerativeAI"
+          content="Automated EDA and visualization using Sweetviz library"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
