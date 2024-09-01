@@ -16,7 +16,7 @@ const AboutPage = () => {
         <section className="text-center mb-16">
           <h1 className="text-5xl font-bold text-gray-800 mb-4 md:leading-tight tracking-wider">
             Your <span className="text-teal-500">Journey</span> to Better{" "}
-            <span className="text-yellow-500">Text Analysis</span>
+            <span className="text-yellow-500">Document Analysis</span>
           </h1>
           <p className="text-lg text-gray-600 mb-8">
             We are dedicated to transforming the way you interact with data. Our
