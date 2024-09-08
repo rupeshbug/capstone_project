@@ -39,20 +39,18 @@ const HowItWorksSection = () => {
     },
   ];
 
-  // Sequential floating animation
-  const useFloatingAnimation = (index) => {
+  // Custom hook for floating animation for images only
+  const useFloatingImageAnimation = () => {
     return useSpring({
       loop: true,
-      from: { transform: "translateY(0)" },
+      from: { transform: "translateY(0px)" },
       to: async (next) => {
         while (true) {
-          await next({ transform: "translateY(-25px)" });
-          await next({ transform: "translateY(0)" });
+          await next({ transform: "translateY(-15px)" });
+          await next({ transform: "translateY(0px)" });
         }
       },
-      config: { ...config.slow, duration: 3000 },
-      reset: true,
-      delay: index * 600, // Delay for sequential effect
+      config: { duration: 3000, ...config.slow }, // Adjusted duration for smoother animation
     });
   };
 
@@ -66,36 +64,31 @@ const HowItWorksSection = () => {
           const { ref, inView } = useInView({ triggerOnce: true });
           const animationProps = useSpring({
             opacity: inView ? 1 : 0,
-            transform: inView ? "translateY(0)" : "translateY(50px)",
+            transform: inView ? "translateY(0)" : "translateY(64px)",
           });
 
-          const floatingProps = useFloatingAnimation(index);
+          const floatingImageProps = useFloatingImageAnimation();
 
           return (
             <div
               key={index}
+              ref={ref}
               className="p-2 relative flex flex-col items-center text-center max-w-xs mb-10 lg:mb-0"
+              style={animationProps}
             >
-              <animated.div
-                style={{
-                  ...animationProps,
-                  ...(index < steps.length ? floatingProps : {}),
-                }}
-                ref={ref}
-              >
-                <img
-                  className={`w-28 h-28 mb-4`}
-                  src={step.imageSrc}
-                  alt={step.altText}
-                />
-                <h3 className="text-3xl font-bold text-teal-600 mb-2">
-                  {step.number}
-                </h3>
-                <h4 className="text-lg font-semibold text-gray-800 mb-2">
-                  {step.title}
-                </h4>
-                <p className="text-gray-600">{step.description}</p>
-              </animated.div>
+              <animated.img
+                style={floatingImageProps}
+                className="w-32 h-32 mb-4"
+                src={step.imageSrc}
+                alt={step.altText}
+              />
+              <h3 className="text-3xl font-bold text-teal-600 mb-2">
+                {step.number}
+              </h3>
+              <h4 className="text-lg font-semibold text-gray-800 mb-2">
+                {step.title}
+              </h4>
+              <p className="text-gray-600">{step.description}</p>
             </div>
           );
         })}
