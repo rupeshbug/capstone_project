@@ -10,7 +10,7 @@ const HeroSection = () => {
           <span className="text-teal-600">Documents</span> with Cutting-Edge{" "}
           <span className="text-yellow-500">Analysis</span> and Insights
         </h1>
-        <p className="text-lg text-gray-700 py-2">
+        <p className="text-lg text-gray-700 py-2 tracking-wide">
           Whether you're summarizing lengthy reports, analyzing data patterns,
           or visualizing key metrics, our tool simplifies every step of the
           process. Dive into advanced topic modeling to uncover hidden insights
