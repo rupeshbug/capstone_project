@@ -46,11 +46,11 @@ const HowItWorksSection = () => {
       from: { transform: "translateY(0px)" },
       to: async (next) => {
         while (true) {
-          await next({ transform: "translateY(-15px)" });
+          await next({ transform: "translateY(-18px)" });
           await next({ transform: "translateY(0px)" });
         }
       },
-      config: { duration: 3000, ...config.slow }, // Adjusted duration for smoother animation
+      config: { duration: 2200, ...config.slow }, // Adjusted duration for smoother animation
     });
   };
 
