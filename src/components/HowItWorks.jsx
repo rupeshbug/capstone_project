@@ -56,7 +56,7 @@ const HowItWorksSection = () => {
 
   return (
     <section className="py-12 md:py-16 px-5 lg:px-32">
-      <h2 className="text-center text-4xl font-bold text-gray-800 mb-20">
+      <h2 className="text-center text-4xl font-bold text-gray-800 mb-16">
         How It <span className="text-yellow-500">Works</span>
       </h2>
       <div className="relative flex flex-col lg:flex-row items-center justify-between">
