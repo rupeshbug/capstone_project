@@ -50,7 +50,7 @@ const HowItWorksSection = () => {
           await next({ transform: "translateY(0px)" });
         }
       },
-      config: { duration: 2200, ...config.slow }, // Adjusted duration for smoother animation
+      config: { duration: 1500, ...config.slow },
     });
   };
 
