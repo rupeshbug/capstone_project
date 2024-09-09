@@ -6,7 +6,7 @@ export default function Home() {
     <div className="">
       <Head>
         <title>Topic Analyzer</title>
-        <meta name="description" content="Topic analysis using LDA algorithm" />
+        <meta name="description" content="Topic analysis" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="p-4">
