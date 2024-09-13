@@ -8,7 +8,7 @@ export default function Home() {
         <title>Summarization Feature</title>
         <meta
           name="description"
-          content="Summarization feature using Google GenerativeAI"
+          content="Summarization using Google Gemini Model"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
