@@ -14,7 +14,7 @@ const AboutPage = () => {
       <main className="px-5 md:px-32 py-12 md:py-20 bg-gray-50 min-h-screen">
         {/* Hero Section */}
         <section className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-800 mb-4 md:leading-tight tracking-wider">
+          <h1 className="text-4xl font-bold text-gray-800 mb-6 md:leading-tight tracking-wider">
             Your <span className="text-teal-500">Journey</span> to Better{" "}
             <span className="text-yellow-500">Document Analysis</span>
           </h1>
