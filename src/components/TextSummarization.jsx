@@ -38,16 +38,8 @@ export default function TextSummarization({ summary, setSummary }) {
 
   return (
     <>
-      <Navbar />
-      <main className="flex min-h-screen flex-col items-center p-5 md:p-12">
+      <main className="flex flex-col items-center p-5 md:p-12">
         <div className="max-w-4xl w-full flex-col items-center justify-center text-sm lg:flex">
-          <h1 className="text-3xl mb-4 font-bold text-center text-yellow-500">
-            Summarization
-          </h1>
-          <p className="text-center mb-7 text-lg text-gray-700">
-            Enter your text and generate a concise summary. Ideal for getting
-            quick insights and overviews of lengthy content.
-          </p>
           <textarea
             className="w-full h-64 p-4 border-2 border-gray-100 rounded-md resize-none outline-none shadow-md"
             value={text}

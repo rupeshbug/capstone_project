@@ -42,7 +42,7 @@ export default function DocumentSummerization({ summary, setSummary }) {
 
   return (
     <>
-      <div className="flex min-h-screen flex-col items-center p-5 md:p-12">
+      <div>
         <input type="file" onChange={handleSummarizeDocument} />
       </div>
     </>
