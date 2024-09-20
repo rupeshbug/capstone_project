@@ -1,7 +1,7 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { NextResponse } from "next/server";
-import fs from "fs/promises";
 import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
+import * as fs from "fs";
 
 export async function POST(req) {
   const apiKey = process.env.GOOGLE_API_KEY;
@@ -9,25 +9,32 @@ export async function POST(req) {
   if (!apiKey) {
     return NextResponse.json({ error: "API key is missing" }, { status: 500 });
   }
-
   const genAI = new GoogleGenerativeAI(apiKey);
 
   try {
+    const formData = await req.formData();
+
+    const file = formData.get("file");
+    const loader = new PDFLoader(file);
+    const data = await loader.load();
+
+    console.log(data);
+
+    let content = "";
+    data.forEach((item) => {
+      content = content + "" + item.pageContent;
+    });
+
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
-    const data = await req.json();
-
-    const loader = new PDFLoader("./public/survey-app.pdf");
-
-    const docs = await loader.load();
-
-    const prompt = docs[0].pageContent + ". Summarize this text.";
+    const prompt = content + "\n. Summarize this text.";
     const result = await model.generateContent(prompt);
     const responseText = await result.response.text();
 
     return NextResponse.json({ summary: responseText });
   } catch (error) {
-    console.error("Error generating summary:", error);
+    console.log(error);
+    console.error("Error generating summary:");
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }
