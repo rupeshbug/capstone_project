@@ -5,16 +5,18 @@ import Navbar from "./Navbar";
 import { ClipLoader } from "react-spinners";
 
 export default function Summarization() {
+  const [file, setFile] = useState(null);
+  const [uploading, setUploading] = useState(false);
   const [text, setText] = useState("");
   const [summary, setSummary] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const handleGenerate = async () => {
+  const summarizeText = async () => {
     setLoading(true);
     setError("");
     try {
-      const response = await fetch("/api/summarize", {
+      const response = await fetch("/api/summerizeText", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -37,6 +39,72 @@ export default function Summarization() {
     }
   };
 
+  const summerizeDocument = async () => {
+    setLoading(true);
+    setError("");
+    try {
+      const response = await fetch("/api/summerizeDocument", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ text }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSummary(data.summary);
+      } else {
+        setError(data.error || "An error occurred");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setError("An error occurred while fetching the summary.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleUpload = async () => {
+    if (!file) {
+      setMessage("Please select a file to upload.");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("document", file);
+
+    setUploading(true);
+    setMessage("");
+
+    try {
+      const response = await fetch("/api/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error("Upload failed");
+      }
+
+      const result = await response.json();
+      setMessage(`Upload successful: ${result.message}`);
+    } catch (error) {
+      setMessage(`Error: ${error.message}`);
+    } finally {
+      setUploading(false);
+      setFile(null);
+    }
+  };
+
+  const handleFileChange = (event) => {
+    const selectedFile = event.target.files[0];
+    if (selectedFile) {
+      setFile(selectedFile);
+      console.log("Uploaded file:", selectedFile);
+    }
+  };
   return (
     <>
       <Navbar />
@@ -59,11 +127,13 @@ export default function Summarization() {
           />
           <button
             className="bg-teal-500 text-white text-lg px-5 py-3 mt-7 hover:bg-teal-600 rounded"
-            onClick={handleGenerate}
+            onClick={summarizeText}
             disabled={loading}
           >
             {loading ? <ClipLoader color="white" size={24} /> : "Summarize"}
           </button>
+
+          <input onChange={handleFileChange} type="file" />
 
           {error && <p className="text-red-500 mt-4">{error}</p>}
 
