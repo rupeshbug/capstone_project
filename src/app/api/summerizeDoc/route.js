@@ -18,8 +18,6 @@ export async function POST(req) {
     const loader = new PDFLoader(file);
     const data = await loader.load();
 
-    console.log(data);
-
     let content = "";
     data.forEach((item) => {
       content = content + "" + item.pageContent;
@@ -33,8 +31,6 @@ export async function POST(req) {
 
     return NextResponse.json({ summary: responseText });
   } catch (error) {
-    console.log(error);
-    console.error("Error generating summary:");
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }

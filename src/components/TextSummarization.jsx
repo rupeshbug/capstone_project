@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "./Navbar";
 import { ClipLoader } from "react-spinners";
 
 export default function TextSummarization({ summary, setSummary }) {
@@ -29,7 +28,6 @@ export default function TextSummarization({ summary, setSummary }) {
         setError(data.error || "An error occurred");
       }
     } catch (error) {
-      console.error("Error:", error);
       setError("An error occurred while fetching the summary.");
     } finally {
       setLoading(false);
@@ -37,17 +35,17 @@ export default function TextSummarization({ summary, setSummary }) {
   };
 
   return (
-    <>
-      <main className="flex flex-col items-center p-5 md:p-12">
-        <div className="max-w-4xl w-full flex-col items-center justify-center text-sm lg:flex">
-          <textarea
-            className="w-full h-64 p-4 border-2 border-gray-100 rounded-md resize-none outline-none shadow-md"
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            placeholder="Enter text to summarize..."
-            spellCheck="false"
-            style={{ fontSize: "15px", lineHeight: 1.5 }}
-          />
+    <main className="flex flex-col items-center p-5 md:p-12">
+      <div className="max-w-4xl w-full flex flex-col items-center justify-center text-sm lg:flex">
+        <textarea
+          className="w-full h-64 p-4 border-2 border-gray-100 rounded-md resize-none outline-none shadow-md"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder="Enter text to summarize..."
+          spellCheck="false"
+          style={{ fontSize: "15px", lineHeight: 1.5 }}
+        />
+        <div className="flex justify-center w-full mb-3 md:mb-0">
           <button
             className="bg-teal-500 text-white text-lg px-5 py-3 mt-7 hover:bg-teal-600 rounded"
             onClick={handleTextSummary}
@@ -55,10 +53,10 @@ export default function TextSummarization({ summary, setSummary }) {
           >
             {loading ? <ClipLoader color="white" size={24} /> : "Summarize"}
           </button>
-
-          {error && <p className="text-red-500 mt-4">{error}</p>}
         </div>
-      </main>
-    </>
+
+        {error && <p className="text-red-500 mt-4">{error}</p>}
+      </div>
+    </main>
   );
 }

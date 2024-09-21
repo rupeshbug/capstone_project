@@ -24,7 +24,6 @@ export async function POST(req) {
 
     return NextResponse.json({ summary: responseText });
   } catch (error) {
-    console.error("Error generating summary:", error);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }

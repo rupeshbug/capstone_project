@@ -33,7 +33,6 @@ export default function DocumentSummerization({ summary, setSummary }) {
       setSummary(data.summary);
       // Process the response data as needed, e.g., set summaries
     } catch (error) {
-      console.error("Error:", error);
       setError("An error occurred while fetching the summary.");
     } finally {
       setLoading(false);
@@ -43,7 +42,11 @@ export default function DocumentSummerization({ summary, setSummary }) {
   return (
     <>
       <div>
-        <input type="file" onChange={handleSummarizeDocument} />
+        <input
+          className="ml-24"
+          type="file"
+          onChange={handleSummarizeDocument}
+        />
       </div>
     </>
   );
