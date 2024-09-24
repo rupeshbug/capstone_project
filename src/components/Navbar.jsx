@@ -31,8 +31,10 @@ function Navbar() {
 
   return (
     <nav className="relative py-5 px-5 md:px-32 text-gray-800 flex justify-between items-center">
-      <div className="w-[30%] flex gap-1">
-        <h1 className="text-3xl tracking-wider">Intextify</h1>
+      <div className="w-[30%] flex gap-1 cursor-pointer">
+        <Link href="/">
+          <h1 className="text-3xl tracking-wider">Intextify</h1>
+        </Link>
         <span>
           <ChartNoAxesCombined size={32} color="#0d9488" />
         </span>

@@ -1,4 +1,3 @@
-import Navbar from "../../components/Navbar";
 import Link from "next/link";
 import { FileCheck2, ChartNoAxesCombined, ScanEye } from "lucide-react";
 
@@ -35,7 +34,6 @@ const features = [
 const FeaturesPage = () => {
   return (
     <>
-      <Navbar />
       <main className="px-5 md:px-32 py-12 md:py-20">
         <section className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-800 mb-4">

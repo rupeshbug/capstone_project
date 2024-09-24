@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Navbar from "../../components/Navbar";
 import { CheckCircle } from "lucide-react";
 
 const AboutPage = () => {
@@ -10,8 +9,7 @@ const AboutPage = () => {
         <meta name="description" content="Learn more about our platform" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
-      <main className="px-5 md:px-32 py-12 md:py-20 bg-gray-50 min-h-screen">
+      <main className="px-5 md:px-32 py-12 md:py-15 bg-gray-50 min-h-screen">
         {/* Hero Section */}
         <section className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-800 mb-6 md:leading-tight tracking-wider">

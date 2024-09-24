@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Navbar from "./Navbar";
 import { ClipLoader } from "react-spinners";
 
 export default function Visualization() {
@@ -68,7 +67,6 @@ export default function Visualization() {
 
   return (
     <>
-      <Navbar />
       <div className="container mx-auto px-5 py-8 md:p-12 mt-7 max-w-4xl">
         <h1 className="text-4xl mb-8 font-bold text-center text-gray-600">
           Automated <span className="text-yellow-500">{currentWord}</span>

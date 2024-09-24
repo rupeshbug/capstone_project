@@ -4,7 +4,6 @@ import Head from "next/head";
 import TextSummarization from "../../components/TextSummarization";
 import DocumentSummerization from "../../components/DocumentSummerization";
 import { useState } from "react";
-import Navbar from "../../components/Navbar";
 
 export default function Home() {
   const [summary, setSummary] = useState("");
@@ -19,7 +18,6 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
       <div className="px-5 py-8 md:p-12 mt-8 mx-auto">
         <h1 className="text-3xl mb-4 font-bold text-center text-yellow-500">
           Summarization

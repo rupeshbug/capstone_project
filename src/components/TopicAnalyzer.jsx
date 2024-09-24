@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "./Navbar";
 import { ClipLoader } from "react-spinners";
 
 async function fetchTopics(text) {
@@ -48,7 +47,6 @@ export default function TopicAnalyzer() {
 
   return (
     <>
-      <Navbar />
       <div className="max-w-4xl bg-slate-100 mx-auto px-5 py-8 md:p-12 rounded-lg shadow-md mt-10">
         <h1 className="text-3xl mb-4 font-bold text-center text-gray-700">
           <span className="text-yellow-500">Topic </span>Analyzer
