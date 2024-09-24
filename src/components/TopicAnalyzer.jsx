@@ -36,6 +36,7 @@ export default function TopicAnalyzer() {
     setTopics([]);
     try {
       const result = await fetchTopics(text);
+      console.log("Fetched topics data:", result);
       setTopics(result);
     } catch (error) {
       setError("An error occurred while analyzing the text.");
@@ -80,11 +81,11 @@ export default function TopicAnalyzer() {
               Analyzed Topics:
             </h2>
             <ul>
-              {topics.map(([topic, probability], index) => (
+              {topics.map(({ topic, score }, index) => (
                 <li key={index} className="border-b-2 py-2">
                   <span className="font-semibold text-gray-800">{topic}:</span>{" "}
                   <span className="text-teal-500 text-lg">
-                    {probability.toFixed(2)}
+                    {score.toFixed(2)}
                   </span>{" "}
                   <span className="text-gray-500 text-sm">(Probability)</span>
                 </li>
