@@ -2,6 +2,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Rocket, ChartNoAxesCombined } from "lucide-react";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  SignUpButton,
+  UserButton,
+} from "@clerk/nextjs";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -51,9 +58,16 @@ function Navbar() {
         </Link>
       </div>
 
-      <div className="hidden lg:flex gap-2 items-center border-2 py-2 px-6 border-teal-500 rounded-2xl hover:bg-teal-500 hover:text-white">
+      <div className="hidden lg:flex gap-2 items-center border-2 py-2 px-6 border-teal-500 rounded-2xl hover:bg-teal-500 hover:text-white cursor-pointer">
         <Rocket size={20} color="#933a34" />
-        <Link href="/">Try It Now</Link>
+        <SignedOut>
+          <SignInButton>
+            <p className="cursor-pointer">Try It Now</p>
+          </SignInButton>
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
       </div>
       <button className="xl:hidden text-gray-800" onClick={toggleMenu}>
         <Menu size={32} />
