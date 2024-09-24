@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Navbar from "../../components/Navbar";
 import Link from "next/link";
 import { FileCheck2, ChartNoAxesCombined, ScanEye } from "lucide-react";
@@ -35,15 +34,7 @@ const features = [
 
 const FeaturesPage = () => {
   return (
-    <div>
-      <Head>
-        <title>Features</title>
-        <meta
-          name="description"
-          content="Explore the features of our platform"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
       <Navbar />
       <main className="px-5 md:px-32 py-12 md:py-20">
         <section className="text-center mb-12">
@@ -86,7 +77,7 @@ const FeaturesPage = () => {
           ))}
         </section>
       </main>
-    </div>
+    </>
   );
 };
 
