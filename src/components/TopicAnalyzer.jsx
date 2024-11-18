@@ -32,11 +32,19 @@ export default function TopicAnalyzer() {
   const handleAnalyze = async () => {
     setError("");
     setLoading(true);
-    setTopics([]);
+    setTopics([]); // Reset topics before analysis
+
     try {
       const result = await fetchTopics(text);
       console.log("Fetched topics data:", result);
-      setTopics(result);
+
+      // Transform API response to match UI expectations
+      const formattedTopics = result.top_labels.map((label, index) => ({
+        topic: label,
+        score: result.top_scores[index],
+      }));
+
+      setTopics(formattedTopics);
     } catch (error) {
       setError("An error occurred while analyzing the text.");
       console.error("Error fetching topics:", error);
