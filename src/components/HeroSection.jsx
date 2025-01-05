@@ -29,7 +29,7 @@ const HeroSection = () => {
             <Rocket size={32} color="#14b8a6" className="ml-3" />
           </h3>
           <p className="text-lg text-gray-700 text-center mb-4">
-            Discover all the features to enhance your experience.
+            Discover all the available features to enhance your experience.
           </p>
           <div className="text-center mt-4 mb-2 animate-bounce">
             <Link
