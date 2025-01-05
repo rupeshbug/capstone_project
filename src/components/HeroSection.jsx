@@ -14,10 +14,10 @@ const HeroSection = () => {
         </h1>
         <p className="text-lg text-gray-700 py-2 transition-opacity duration-500 ease-in-out opacity-90 hover:opacity-100">
           Whether you're summarizing lengthy reports, analyzing data patterns,
-          or visualizing key metrics, our tool simplifies every step of the
-          process. Dive into advanced topic modeling to uncover hidden insights
-          and trends within your documents. Experience unparalleled efficiency
-          and clarity with our state-of-the-art technology designed for
+          or visualizing metrics, our tool simplifies every step of the process.
+          Dive into advanced topic modeling to uncover hidden insights and
+          trends within your documents. Experience unparalleled efficiency and
+          clarity with our state-of-the-art technology designed for
           professionals and enthusiasts alike. Discover the power of effortless
           document analysis and make informed decisions with ease.
         </p>
