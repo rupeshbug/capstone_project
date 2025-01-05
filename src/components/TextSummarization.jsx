@@ -41,7 +41,7 @@ export default function TextSummarization({ summary, setSummary }) {
           className="w-full h-64 p-4 border-2 border-gray-100 rounded-md resize-none outline-none shadow-md"
           value={text}
           onChange={(e) => setText(e.target.value)}
-          placeholder="Enter text to summarize..."
+          placeholder="Enter the text to summarize..."
           spellCheck="false"
           style={{ fontSize: "15px", lineHeight: 1.5 }}
         />
