@@ -39,7 +39,7 @@ const HowItWorksSection = () => {
     },
   ];
 
-  // Custom hook for floating animation for images only
+  // Custom hook for floating animation for only images
   const useFloatingImageAnimation = () => {
     return useSpring({
       loop: true,
