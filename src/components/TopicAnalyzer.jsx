@@ -32,7 +32,7 @@ export default function TopicAnalyzer() {
   const handleAnalyze = async () => {
     setError("");
     setLoading(true);
-    setTopics([]); // Reset topics before analysis
+    setTopics([]);
 
     try {
       const result = await fetchTopics(text);
