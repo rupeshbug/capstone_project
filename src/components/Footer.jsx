@@ -59,7 +59,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom text */}
       <div className="text-center mt-6 text-gray-400">
         <hr className="border-gray-600 mb-2" />
         <p className="mt-4 font-semibold">Intextify @2024</p>
