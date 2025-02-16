@@ -20,7 +20,6 @@ export default function Visualization() {
       setCurrentWord(words[index]);
     }, 2000);
 
-    // Clear the interval when the component unmounts
     return () => clearInterval(intervalId);
   }, []);
 
