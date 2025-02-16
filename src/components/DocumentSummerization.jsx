@@ -31,7 +31,6 @@ export default function DocumentSummerization({ summary, setSummary }) {
 
       const data = await response.json();
       setSummary(data.summary);
-      // Process the response data as needed, e.g., set summaries
     } catch (error) {
       setError("An error occurred while fetching the summary.");
     } finally {
