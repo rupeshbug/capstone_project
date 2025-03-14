@@ -14,3 +14,7 @@ This web application provides a suite of document analysis tools including summa
 - **Google Gemini LLM**: Used for document summarization.
 - **Huggingface**: Provides the models for zero-shot classification (e.g., BART).
 - **Sweetviz**: Library used for creating automated visualizations of the data.
+
+### Deployment
+
+You can view the deployed application at: [intextify.vercel.app](https://intextify.vercel.app)
