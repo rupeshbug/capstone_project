@@ -1,4 +1,4 @@
-## Document Analysis Web Application
+## Intextify - Document Analysis Web Application
 
 This web application provides a suite of document analysis tools including summarization, topic categorization, and automated data visualization. The application leverages advanced machine learning models to summarize documents, categorize topics using zero-shot classification, and generate insightful visualizations.
 
